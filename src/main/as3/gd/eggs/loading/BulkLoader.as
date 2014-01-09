@@ -501,15 +501,11 @@ package gd.eggs.loading
 		 */
 		public static function getLoader(name:String):BulkLoader
 		{
-			// пытаем�?�? выковыр�?ть лоадер из �?пи�?ка
 			if (BulkLoader._allLoaders.hasOwnProperty(name))
 			{
-				trace("trying to return loader from list");
 				return BulkLoader._allLoaders[name] as BulkLoader;
 			}
 
-			// е�?ли не проканало то �?оздаем новый �? дефолтными значени�?ми.
-			trace("trying to return new loader");
 			return new BulkLoader(name);
 		}
 
