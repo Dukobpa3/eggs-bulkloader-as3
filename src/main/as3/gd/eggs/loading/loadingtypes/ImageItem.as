@@ -66,7 +66,7 @@
 					onSecurityErrorHandler(_createErrorEvent(e));
 				}
 			}
-		};
+		}
 
 		public function _onHttpStatusHandler(evt:HTTPStatusEvent):void
 		{
@@ -93,7 +93,6 @@
 				// of no crossdomain has allowed this operation, this might
 				// raise a security error
 
-				trace("completed: ", url.url);
 				if (!_fromSO)
 				{
 					_byteContent = loader.byteContent;
@@ -113,7 +112,7 @@
 				//onSecurityErrorHandler(e);
 			}
 
-		};
+		}
 
 		override public function stop():void
 		{
@@ -129,7 +128,7 @@
 
 			}
 			super.stop();
-		};
+		}
 
 		/** Gets a  definition from a fully qualified path (can be a Class, function or namespace).
 		 @param className The fully qualified class name as a string.
