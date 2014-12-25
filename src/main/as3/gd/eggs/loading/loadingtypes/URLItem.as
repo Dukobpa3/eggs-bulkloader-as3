@@ -52,7 +52,7 @@
 				loader.dispatchEvent(new ProgressEvent(ProgressEvent.PROGRESS, true, false, _byteContent.length, _byteContent.length));
 				loader.dispatchEvent(new Event(Event.COMPLETE, true, false));
 
-				return;
+
 			}
 			else
 			{
@@ -67,13 +67,11 @@
 					onSecurityErrorHandler(_createErrorEvent(e));
 				}
 			}
-		};
-
+		}
 		override public function onStartedHandler(evt:Event):void
 		{
 			super.onStartedHandler(evt);
-		};
-
+		}
 		override public function onCompleteHandler(evt:Event):void
 		{
 			try
@@ -94,8 +92,7 @@
 				dispatchEvent(_createErrorEvent(e));
 			}
 			super.onCompleteHandler(evt);
-		};
-
+		}
 		override public function stop():void
 		{
 			try
@@ -110,8 +107,7 @@
 
 			}
 			super.stop();
-		};
-
+		}
 		override public function cleanListeners():void
 		{
 			if (loader)

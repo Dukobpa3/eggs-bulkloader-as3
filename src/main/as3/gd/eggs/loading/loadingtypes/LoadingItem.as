@@ -205,7 +205,7 @@ package gd.eggs.loading.loadingtypes
 		/**
 		 *    @private
 		 */
-		public var _parsedURL:SmartURL
+		public var _parsedURL:SmartURL;
 		/** @private */
 
 		public var specificAvailableProps:Array;
@@ -367,7 +367,7 @@ package gd.eggs.loading.loadingtypes
 			evt.stopPropagation();
 			if (numTries < maxTries)
 			{
-				status = null
+				status = null;
 				load();
 			}
 			else

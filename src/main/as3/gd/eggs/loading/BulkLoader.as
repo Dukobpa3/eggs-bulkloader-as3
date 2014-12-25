@@ -765,7 +765,7 @@ package gd.eggs.loading
 			{
 				item.stop();
 			}
-			log("STOPPED ITEM:", item, LOG_INFO)
+			log("STOPPED ITEM:", item, LOG_INFO);
 			var result:Boolean = _removeFromConnections(item);
 			if (loadsNext)
 			{
@@ -1324,7 +1324,7 @@ package gd.eggs.loading
 			{
 				return "\t" + item.getStats();
 			});
-			stats.push(itemsInfo.join("\n"))
+			stats.push(itemsInfo.join("\n"));
 			stats.push("************************************");
 			var statsString:String = stats.join("\n");
 			log(statsString, LOG_VERBOSE);
@@ -1499,7 +1499,7 @@ package gd.eggs.loading
 		{
 			// TODO: make sure we remove from the righ hostname
 			var itemsToLoad:Array = _getAllConnections();
-			itemsToLoad.sortOn(["priority", "bytesRemaining", "_additionIndex"], [Array.NUMERIC, Array.DESCENDING , Array.NUMERIC, Array.NUMERIC])
+			itemsToLoad.sortOn(["priority", "bytesRemaining", "_additionIndex"], [Array.NUMERIC, Array.DESCENDING , Array.NUMERIC, Array.NUMERIC]);
 			var toRemove:LoadingItem = LoadingItem(itemsToLoad[0]);
 			return toRemove;
 		}
@@ -1546,7 +1546,6 @@ package gd.eggs.loading
 			var searchString:String = urlAsString.indexOf("?") > -1 ? urlAsString.substring(0, urlAsString.indexOf("?")) : urlAsString;
 			// split on "/" as an url can have a dot as part of a directory name
 			var finalPart:String = searchString.substring(searchString.lastIndexOf("/"));
-			;
 			var extension:String = finalPart.substring(finalPart.lastIndexOf(".") + 1).toLowerCase();
 			var type:String;
 			if (!Boolean(extension))
@@ -1624,10 +1623,8 @@ package gd.eggs.loading
 				result = subRegex.exec(raw);
 				var_name = result ? result.var_name : null;
 			}
-			;
 			if (matches.length == 0)
 			{ return raw;}
-			;
 			var buffer:Array = [];
 			var lastMatch:Object, match:Object;
 			// beggininf os string, if it doesn't start with a substitition
@@ -1697,14 +1694,14 @@ package gd.eggs.loading
 		/** @private  */
 		public static function __debug_print_loaders():void
 		{
-			var theNames:Array = []
+			var theNames:Array = [];
 			for each(var instNames:String in BulkLoader._allLoaders)
 			{
 				theNames.push(instNames);
 			}
 			theNames.sort();
 			trace("All loaders");
-			theNames.forEach(function (item:*, ...rest):void {trace("\t", item)})
+			theNames.forEach(function (item:*, ...rest):void {trace("\t", item)});
 			trace("===========");
 		}
 
@@ -1835,8 +1832,8 @@ package gd.eggs.loading
 			_itemsTotal--;
 			_totalWeight -= item.weight;
 			log("Removing " + item, LOG_VERBOSE);
-			item.removeEventListener(Event.COMPLETE, _onItemComplete, false)
-			item.removeEventListener(Event.COMPLETE, _incrementItemsLoaded, false)
+			item.removeEventListener(Event.COMPLETE, _onItemComplete, false);
+			item.removeEventListener(Event.COMPLETE, _incrementItemsLoaded, false);
 			item.removeEventListener(ERROR, _onItemError, false);
 			item.removeEventListener(Event.OPEN, _onItemStarted, false);
 			item.removeEventListener(ProgressEvent.PROGRESS, _onProgress, false);

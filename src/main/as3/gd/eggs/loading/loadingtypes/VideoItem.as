@@ -69,7 +69,7 @@
 			stream.addEventListener(NetStatusEvent.NET_STATUS, onNetStatus, false, 0, true);
 			dummyEventTrigger = new Sprite();
 			dummyEventTrigger.addEventListener(Event.ENTER_FRAME, createNetStreamEvent, false, 0, true);
-			var customClient:Object = new Object();
+			var customClient:Object = {};
 			customClient.onCuePoint = function (...args):void {};
 			customClient.onMetaData = onVideoMetadata;
 			customClient.onPlayStatus = function (...args):void {};
@@ -84,8 +84,7 @@
 			{
 				onSecurityErrorHandler(_createErrorEvent(e));
 			}
-		};
-
+		}
 		/**
 		 *   @private
 		 */
@@ -142,8 +141,7 @@
 		{
 			_content = stream;
 			super.onCompleteHandler(evt);
-		};
-
+		}
 		override public function onStartedHandler(evt:Event):void
 		{
 			_content = stream;
@@ -152,10 +150,8 @@
 				stream.pause();
 				stream.seek(0);
 			}
-			;
 			super.onStartedHandler(evt);
-		};
-
+		}
 		override public function stop():void
 		{
 			try
@@ -170,8 +166,7 @@
 
 			}
 			super.stop();
-		};
-
+		}
 		override public function cleanListeners():void
 		{
 			if (stream)
@@ -237,8 +232,7 @@
 		internal function onVideoMetadata(evt:*):void
 		{
 			_metaData = evt;
-		};
-
+		}
 		/**
 		 *   @private
 		 */

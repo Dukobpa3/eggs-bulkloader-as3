@@ -68,20 +68,20 @@
 		public function Loader()
 		{
 			loader = new URLLoader();
-			loader.addEventListener(HTTPStatusEvent.HTTP_STATUS, handleHttpStatus)
+			loader.addEventListener(HTTPStatusEvent.HTTP_STATUS, handleHttpStatus);
 			loader.addEventListener(Event.COMPLETE, handleLoadComplete);
 			loader.addEventListener(IOErrorEvent.IO_ERROR, handleURLLoadError);
-			loader.addEventListener(ProgressEvent.PROGRESS, handleProgress)
-			loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, handleSecurityError)
+			loader.addEventListener(ProgressEvent.PROGRESS, handleProgress);
+			loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, handleSecurityError);
 			loader.dataFormat = URLLoaderDataFormat.BINARY;
 
 
 			realLoader = new flash.display.Loader();
-			realLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, handleLoaderComplete)
-			realLoader.contentLoaderInfo.addEventListener(Event.UNLOAD, handleUnload)
-			realLoader.addEventListener(Event.INIT, handleInit)
+			realLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, handleLoaderComplete);
+			realLoader.contentLoaderInfo.addEventListener(Event.UNLOAD, handleUnload);
+			realLoader.addEventListener(Event.INIT, handleInit);
 
-			loaderInfoReference = new LoaderInfo(this, loader, realLoader, commObject)
+			loaderInfoReference = new LoaderInfo(this, loader, realLoader, commObject);
 			addChild(realLoader)
 		}
 
@@ -190,7 +190,7 @@
 		public function unload():void
 		{
 			commObject.url = '';
-			close()
+			close();
 			realLoader.unload()
 		}
 

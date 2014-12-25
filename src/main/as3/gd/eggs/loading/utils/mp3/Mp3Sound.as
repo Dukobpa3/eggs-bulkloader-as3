@@ -54,11 +54,11 @@ package gd.eggs.loading.utils.mp3
 		public function Mp3Sound()
 		{
 			_loader = new URLLoader();
-			_loader.addEventListener(HTTPStatusEvent.HTTP_STATUS, onHttpStatus)
+			_loader.addEventListener(HTTPStatusEvent.HTTP_STATUS, onHttpStatus);
 			_loader.addEventListener(Event.COMPLETE, onURLLoadComplete);
 			_loader.addEventListener(IOErrorEvent.IO_ERROR, onURLLoadError);
-			_loader.addEventListener(ProgressEvent.PROGRESS, onURLProgress)
-			_loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onURLSecurityError)
+			_loader.addEventListener(ProgressEvent.PROGRESS, onURLProgress);
+			_loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onURLSecurityError);
 			_loader.dataFormat = URLLoaderDataFormat.BINARY;
 
 			_mp3Parser = new MP3Parser();
@@ -104,7 +104,7 @@ package gd.eggs.loading.utils.mp3
 		private function onURLLoadComplete(event:Event):void
 		{
 			//removeEventListener(Event, onURLLoadComplete);
-			_byteContent = event.target.data as ByteArray
+			_byteContent = event.target.data as ByteArray;
 			_mp3Parser.parse(event.target.data as ByteArray);
 		}
 
