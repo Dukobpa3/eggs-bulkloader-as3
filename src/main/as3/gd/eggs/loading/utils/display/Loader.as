@@ -155,7 +155,7 @@
 		private function handleURLLoadError(event:IOErrorEvent):void
 		{
 			//trace("URLLoader: " + event.text);
-			loaderInfo.dispatchEvent(event);
+            loaderInfoReference.dispatchEvent(event);
 		}
 
 		private function handleLoadComplete(event:Event):void

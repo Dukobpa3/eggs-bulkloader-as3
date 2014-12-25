@@ -6,7 +6,7 @@
     <groupId>gd.eggs.as3.framework</groupId>
     <artifactId>eggs-loading-as3</artifactId>
     <name>eggs-loading-as3</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>swc</packaging>
 
 	<properties>
